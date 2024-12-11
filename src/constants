@@ -1,0 +1,33 @@
+
+export const youTubeLogo = 'https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-9.png';
+
+export const sideBarList = [
+    {
+        id:'1',
+        name:'Home'
+    },
+    {
+        id:'2',
+        name:'Music'
+    },
+    {
+        id:'3',
+        name:'Sports'
+    },
+    {
+        id:'4',
+        name:'Games'
+    },
+    {
+        id:'5',
+        name:'News'
+    },
+    {
+        id:'6',
+        name:'Movies'
+    },
+    {
+        id:'7',
+        name:'Settings'
+    },
+]
