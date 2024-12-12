@@ -9,7 +9,6 @@ const VideosContainer = () => {
 
   const dispatch = useDispatch()
   const popularVideos = useSelector((store)=>store.videos.popularVideos)
-  console.log(popularVideos)
 
   const getVideosHandler = async ()=>{
     try{
@@ -27,11 +26,11 @@ const VideosContainer = () => {
 
   return (
     <div >
-      <div className='flex gap-x-3 flex-wrap '>
+      <div className='flex gap-x-5 flex-wrap '>
         {popularVideos &&
           popularVideos.map((video)=>
-            <Link to={`/watchvideo/${video.id}`}>
-              <VideoCard key={video.id} video={video}/>
+            <Link  key={video.id} to={`/watchvideo/${video.id}`}>
+              <VideoCard video={video}/>
             </Link>
           )
         }

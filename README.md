@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Debouncing:=> Performance on Searching the things
+
+    ex: Apple Iphone pro max
+
+    =typing slow difference between two key stroke would be high(100 to 200ms)
+        - call apis on each letter(high api call during search)
+        -api calls = 20 calls on each letter
+        -users 1000 = 1000*20 =20000 api calls at a time
+    =typing fast difference between two key stroke would be less (less than 80ms, 50ms, 40ms)
+        - call apis on group of letter or word(less api call during search)
+        -api calls = less than 4 calls on each word or after complition of sentence/word
+        -uers 1000 = 1000*3 = 3000 api calls at time
+
+    # DEBOUNCING with 200ms 
+        -if differnce between 2 keystroke is less than 200ms, decline the api calls
+        -if differnce between 2 keystroke is more than 200ms, make the api calls(may required some suggestions)
+
+        =>ex. Youtube debouncing 100ms and flipkart debouncing 200ms
+
+
+CACHE

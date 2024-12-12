@@ -1,14 +1,23 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { openMenu } from '../store/slices/globalSlice'
+import { useLocation } from 'react-router-dom'
 
 const SideBar = () => {
 
   const isMenuOpen = useSelector((store)=> store.global.isMenuOpen)
 
+  const location = useLocation()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(openMenu(location.pathname === '/'))
+  }, [location.pathname])
+
   if(!isMenuOpen) return null
 
   return (
-    <div className='w-[11%]'>
+    <div className='w-[15%]'>
       <ul className='py-4 px-2 gap-2 mx-4 border-b-2'>
         <li>Home</li>
         <li>Shorts</li>
